@@ -10,4 +10,9 @@ describe('FizzBuzz', function() {
         expect(fizzStr).toEqual('Fizz');
     })
 
+    it('should return Buzz when number is 5 mul', function() {
+        var buzzStr = FizzBuzz(5);
+        expect(buzzStr).toEqual('Buzz');
+    })
+
 });
