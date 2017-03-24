@@ -15,4 +15,9 @@ describe('FizzBuzz', function() {
         expect(buzzStr).toEqual('Buzz');
     })
 
+    it('should return FizzBuzz when number is 15 mul', function() {
+        var fizzBuzzStr = FizzBuzz(15);
+        expect(fizzBuzzStr).toEqual('FizzBuzz');
+    })
+
 });
