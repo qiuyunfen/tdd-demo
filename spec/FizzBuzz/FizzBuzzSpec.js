@@ -5,5 +5,9 @@ describe('FizzBuzz', function() {
         expect(str === '1').toEqual(true);
     })
 
+    it('should return Fizz when number is 3 mul', function() {
+        var fizzStr = FizzBuzz(3);
+        expect(fizzStr).toEqual('Fizz');
+    })
 
 });
