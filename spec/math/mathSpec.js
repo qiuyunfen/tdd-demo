@@ -4,6 +4,4 @@ describe('math', function() {
         var sum = add(1,2);
         expect(sum).toEqual(3);      
     })
-
-    
 });
