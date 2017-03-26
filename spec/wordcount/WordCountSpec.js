@@ -1,9 +1,9 @@
 describe('WordCount', function() {
-    const readFile = require('../../lib/wordcount/WordCount');
+    const WordCount = require('../../lib/wordcount/WordCount');
 
     // 读取文件
     it('should return String when read a text file', function() {
-        let words = readFile('data/WordCount.txt');
+        let words = WordCount.readFile('data/WordCount.txt');
         expect(words).toEqual('In LDA each document may be viewed as a mixture of various '+
                                 'topics where each document is considered to have a set of topics '+
                                 'that are assigned to it via LDA This is similar to probabilistic '+
@@ -14,7 +14,7 @@ describe('WordCount', function() {
     });
     //计数：文件中只有一个单词
     it('should return Array include one object when only one word', function() {
-        let wordCount = countWords('semantic');
+        let wordCount = WordCount.countWords('semantic');
         expect(wordCount).toEqual([{word: 'semantic', count: 1}]);
     });
 })
