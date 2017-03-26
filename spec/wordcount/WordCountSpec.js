@@ -1,4 +1,5 @@
 describe('WordCount', function() {
+    const readFile = require('../../lib/wordcount/WordCount');
     
     // 读取文件
     it('should return String when read a text file', function() {
