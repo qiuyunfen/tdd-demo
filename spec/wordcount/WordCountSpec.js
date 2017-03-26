@@ -12,9 +12,15 @@ describe('WordCount', function() {
                                 'reasonable mixtures of topics in a document It has been noted however that '+
                                 'the pLSA model is equivalent to the LDA model under a uniform Dirichlet prior distribution');
     });
-    //计数：文件中只有一个单词
+    //计数：文件中只有一个小写单词
     it('should return Array include one object when only one word', function() {
         let wordCount = WordCount.countWords('semantic');
+        expect(wordCount).toEqual([{word: 'semantic', count: 1}]);
+    });
+
+    //计数：文件中只有一个大写单词
+    it('should return Array include one object when only one word', function() {
+        let wordCount = WordCount.countWords('Semantic');
         expect(wordCount).toEqual([{word: 'semantic', count: 1}]);
     });
 })
