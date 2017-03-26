@@ -56,4 +56,10 @@ describe('WordCount', function() {
             {word: 'topics', count: 4}
         ]);
     })
+
+    //排序:数组长度为1
+    it('should return sorted Array when Array length is 1', function() {
+        let sortArr = WordCount.sortByCount([{word: 'topics', count: 4}]);
+        expect(sortArr).toEqual([{word: 'topics', count: 4}]);
+    });
 })
