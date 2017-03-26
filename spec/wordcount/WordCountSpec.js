@@ -62,4 +62,10 @@ describe('WordCount', function() {
         let sortArr = WordCount.sortByCount([{word: 'topics', count: 4}]);
         expect(sortArr).toEqual([{word: 'topics', count: 4}]);
     });
+
+    //排序:每个单词都有相同的count值，按在文本中出现先后排序
+    it('should return sorted Array when per object has same count', function() {
+        let sortArr = WordCount.sortByCount([{word: 'topics', count: 4}, {word: 'a', count: 4}]);
+        expect(sortArr).toEqual([{word: 'topics', count: 4}, {word: 'a', count: 4}]);
+    });
 })
