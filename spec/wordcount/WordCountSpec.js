@@ -41,4 +41,19 @@ describe('WordCount', function() {
             {word: 'distribution', count: 1}
         ])
     });
+
+    //计数：大小写均包含，重复计数
+    it('should return Array include many object when per word occur many times or one time', function() {
+        let wordCount = WordCount.countWords('each document may be viewed as a topics each document a topics topics topics');
+        expect(wordCount).toEqual([
+            {word: 'each', count: 2},
+            {word: 'document', count: 2},
+            {word: 'may', count: 1},
+            {word: 'be', count: 1},
+            {word: 'viewed', count: 1},
+            {word: 'as', count: 1},
+            {word: 'a', count: 2},
+            {word: 'topics', count: 4}
+        ]);
+    })
 })
