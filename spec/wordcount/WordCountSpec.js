@@ -69,7 +69,7 @@ describe('WordCount', function() {
         expect(sortArr).toEqual([{word: 'topics', count: 4}, {word: 'a', count: 4}]);
     });
 
-    //排序:每个对象都有不相同的count值
+    //排序:每个单词都有不相同的count值
     it('should return sorted Array when per object has same count', function() {
         let sortArr = WordCount.sortByCount([
             {word: 'document', count: 1},
@@ -78,6 +78,24 @@ describe('WordCount', function() {
             {word: 'topics', count: 4}
         ]);
         expect(sortArr).toEqual([
+            {word: 'topics', count: 4},
+            {word: 'a', count: 3},
+            {word: 'semantic', count: 2}, 
+            {word: 'document', count: 1}
+        ]);
+    });
+
+    //排序:单词有不相同的count值，单词有相同count值
+    it('should return sorted Array when per object has same count', function() {
+        let sortArr = WordCount.sortByCount([
+            {word: 'document', count: 1},
+            {word: 'semantic', count: 2}, 
+            {word: 'each', count: 4},
+            {word: 'a', count: 3},
+            {word: 'topics', count: 4}
+        ]);
+        expect(sortArr).toEqual([
+            {word: 'each', count: 4},
             {word: 'topics', count: 4},
             {word: 'a', count: 3},
             {word: 'semantic', count: 2}, 
