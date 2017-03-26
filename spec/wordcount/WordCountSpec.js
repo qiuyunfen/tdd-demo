@@ -122,4 +122,10 @@ describe('WordCount', function() {
         ]);
         expect(wordContStr).toEqual('each:4\ntopics:4\na:3\nsemantic:2\ndocument:1\n');
     });
+
+    //总方法测试
+    it('should log string of sorted Array when input a text file', function() {
+        let words = WordCount.wordCount('data/test.txt');
+        expect(words).toEqual('topics:4\neach:4\na:3\nsemantic:2\ndocument:1\n');
+    })
 })
