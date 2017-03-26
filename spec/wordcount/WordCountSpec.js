@@ -23,4 +23,22 @@ describe('WordCount', function() {
         let wordCount = WordCount.countWords('Semantic');
         expect(wordCount).toEqual([{word: 'semantic', count: 1}]);
     });
+
+    //计数：包含多个大小写单词，但无重复
+    it('should return Array include many object when per word occur one time and words include lower and upper', function() {
+        let wordCount = WordCount.countWords('latent semantic analysis pLSA except that in LDA the topic distribution');
+        expect(wordCount).toEqual([
+            {word: 'latent', count: 1},
+            {word: 'semantic', count: 1},
+            {word: 'analysis', count: 1},
+            {word: 'plsa', count: 1},
+            {word: 'except', count: 1},
+            {word: 'that', count: 1},
+            {word: 'in', count: 1},
+            {word: 'lda', count: 1},
+            {word: 'the', count: 1},
+            {word: 'topic', count: 1},
+            {word: 'distribution', count: 1}
+        ])
+    });
 })
