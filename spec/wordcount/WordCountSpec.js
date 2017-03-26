@@ -103,15 +103,13 @@ describe('WordCount', function() {
         ]);
     });
 
-    //输出排序后的字符串
-    it('should log string of sorted Array', function() {
+    //输出排序后的字符串:单词数量为1
+    it('should log string when Array length is 1', function() {
         let wordContStr = WordCount.print([
-            {word: 'each', count: 4},
-            {word: 'topics', count: 4},
-            {word: 'a', count: 3},
-            {word: 'semantic', count: 2}, 
-            {word: 'document', count: 1}
+            {word: 'each', count: 4}
         ]);
-        expect(wordContStr).toEqual('each:4\ntopics:4\na:3\nsemantic:2\ndocument:1\n');
+        expect(wordContStr).toEqual('each:4\n');
     });
+
+
 })
